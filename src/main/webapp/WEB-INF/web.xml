@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Zkart</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>Register</display-name>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>com.login.Register</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/Register</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>com.login.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+<servlet>
+<description/>
+<display-name>Front</display-name>
+<servlet-name>Front</servlet-name>
+<servlet-class>com.login.Front</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>Front</servlet-name>
+<url-pattern>/Front</url-pattern>
+</servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>Add</display-name>
+    <servlet-name>Add</servlet-name>
+    <servlet-class>com.login.Add</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Add</servlet-name>
+    <url-pattern>/Add</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>Adminlog</display-name>
+    <servlet-name>Adminlog</servlet-name>
+    <servlet-class>com.login.Adminlog</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Adminlog</servlet-name>
+    <url-pattern>/Adminlog</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>AddToCart</display-name>
+    <servlet-name>AddToCart</servlet-name>
+    <servlet-class>com.login.AddToCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddToCart</servlet-name>
+    <url-pattern>/AddToCart</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>MyCart</display-name>
+    <servlet-name>MyCart</servlet-name>
+    <servlet-class>com.login.MyCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyCart</servlet-name>
+    <url-pattern>/MyCart</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>Front1</display-name>
+    <servlet-name>Front1</servlet-name>
+    <servlet-class>com.login.Front1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Front1</servlet-name>
+    <url-pattern>/Front1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddToCart1</display-name>
+    <servlet-name>AddToCart1</servlet-name>
+    <servlet-class>com.login.AddToCart1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddToCart1</servlet-name>
+    <url-pattern>/AddToCart1</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>AddToWishlist</display-name>
+    <servlet-name>AddToWishlist</servlet-name>
+    <servlet-class>com.login.AddToWishlist</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddToWishlist</servlet-name>
+    <url-pattern>/AddToWishlist</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>Wishlist</display-name>
+    <servlet-name>Wishlist</servlet-name>
+    <servlet-class>com.login.Wishlist</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Wishlist</servlet-name>
+    <url-pattern>/Wishlist</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>Profile</display-name>
+    <servlet-name>Profile</servlet-name>
+    <servlet-class>com.login.Profile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Profile</servlet-name>
+    <url-pattern>/Profile</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>DeleteProducts</display-name>
+    <servlet-name>DeleteProducts</servlet-name>
+    <servlet-class>com.login.DeleteProducts</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteProducts</servlet-name>
+    <url-pattern>/DeleteProducts</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>Logout</display-name>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>com.login.Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/Logout</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>Edit</display-name>
+    <servlet-name>Edit</servlet-name>
+    <servlet-class>com.login.Edit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Edit</servlet-name>
+    <url-pattern>/Edit</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>Buy</display-name>
+    <servlet-name>Buy</servlet-name>
+    <servlet-class>com.login.Buy</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Buy</servlet-name>
+    <url-pattern>/Buy</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>Conf</display-name>
+    <servlet-name>Conf</servlet-name>
+    <servlet-class>com.login.Conf</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Conf</servlet-name>
+    <url-pattern>/Conf</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>Purchase</display-name>
+    <servlet-name>Purchase</servlet-name>
+    <servlet-class>com.login.Purchase</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Purchase</servlet-name>
+    <url-pattern>/Purchase</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

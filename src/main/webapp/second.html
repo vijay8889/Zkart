@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-Kart</title>
+    <link rel = "stylesheet"  href="style.css" media = "screen" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="header">
+    <div class="container">
+    <div class="navbar">
+        <div class="logo">
+            <img src="images/logo1.png" width="125px" height="70px">
+        </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href=" ">Home</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="log.jsp">Logout</a></li>
+                
+            </ul>
+        </nav>
+        <img src="images/cart.png" width="30px" height="30px">
+        <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <h1>One Stop Shop For All Your Needs</h1>
+            <h1>A New Style!</h1>
+            <p> Enrich your shopping list wisely. <br>
+                An exciting place for the whole family to shop.</p>
+            <a href="" class="btn">Explore Now &#8594;</a>
+
+        </div>
+        <div class="col-2">
+            <img src="images/image1.png" alt="">
+        </div>
+    </div>
+</div>
+</div>
+<div class="shopping">
+    <nav>
+        <ul id="MenuItems" >
+            <li><a href="#mb">Mobiles</a></li>
+            <li><a href="#sh">Shoes</a></li>
+            <li><a href="#cl">Clothes</a></li>
+            <li><a href="#ed">Electronics Devices</a></li>
+            <li><a href="#wt">Watches</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+
+<div class="catogories">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-3">
+                <img src="images/category-1.jpg" >
+            </div>
+            <div class="col-3"><img src="images/category-5.jpg" ></div>
+            <div class="col-3"><img src="images/category-8.jpg" ></div>
+            
+        </div>
+    </div>
+    
+</div>
+
+<div class="small-container">
+    <h1 class="title">Featured Products</h1>
+    <div class="row">
+        <div class="col-4">
+            <img src="images/product-1.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>4.5|ratings
+            </div>
+            <h4>Puma Red T-Shirt</h4>
+            <p>Rs-550</p>
+        </div>
+        <div class="col-4">
+            <img src="images/product-2.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>4.4k|ratings
+                
+            </div>
+            <h4>Addidas Shoes</h4>
+            <p>Rs-700</p>
+        </div>
+        <div class="col-4">
+            <img src="images/product-3.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>4.7|ratings
+            </div>
+            <h4>Puma Tracks</h4>
+            <p>Rs-650</p>
+        </div>
+        <div class="col-4">
+            <img src="images/product-4.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>4.5|ratings
+            </div>
+            <h4>Puma Blue T-Shirt</h4>
+            <p>Rs-450</p>
+        </div>
+    </div>
+    <h2 class="title">Latest Products</h2>
+    <div class="row">
+        <div class="col-4">
+            <img src="images/product-5.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>3.9|ratings
+            </div>
+            <h4>Sparks Shoes</h4>
+            <p>Rs-550</p>
+        </div>
+        <div class="col-4">
+            <img src="images/product-6.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>3.4|ratings
+            </div>
+            <h4>HRX Black T-Shirt</h4>
+            <p>Rs-700</p>
+        </div>
+        <div class="col-4">
+            <img src="images/product-7.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>4.9|ratings
+            </div>
+            <h4>HRX Socks</h4>
+            <p>Rs-150</p>
+        </div>
+        <div class="col-4">
+            <img src="images/product-8.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>4.5|ratings
+            </div>
+            <h4>Fossil Watch</h4>
+            <p>Rs-1450</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <img src="images/product-9.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>4.4|ratings
+            </div>
+            <h4>Roadster Watch</h4>
+            <p>Rs-850</p>
+        </div>
+        <div class="col-4">
+            <img src="images/product-10.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>3.8|ratings
+            </div>
+            <h4>Addidas Shoes</h4>
+            <p>Rs-700</p>
+        </div>
+        <div class="col-4">
+            <img src="images/product-11.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>4.9|ratings
+            </div>
+            <h4>Puma casuals </h4>
+            <p>Rs-650</p>
+        </div>
+        <div class="col-4">
+            <img src="images/product-12.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>4.3|ratings
+            </div>
+            <h4>Nike Tracks</h4>
+            <p>Rs-650</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <img src="images/product-13.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>5.7k|ratings
+            </div>
+            <h4>Iphone 11X</h4>
+            <p>Rs-66,550</p>
+        </div>
+        <div class="col-4">
+            <img src="images/product-14.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>6.9k|ratings
+            </div>
+            <h4>Mi 10S</h4>
+            <p>Rs-22,700</p>
+        </div>
+        <div class="col-4">
+            <img src="images/product-15.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>4.0k|ratings
+            </div>
+            <h4>Mi Trimmer 8p</h4>
+            <p>Rs-1050</p>
+        </div>
+        <div class="col-4">
+            <img src="images/product-17.jpg">
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>3.5k|ratings
+            </div>
+            <h4>Panasonic LED TV</h4>
+            <p>Rs-25,450</p>
+        </div>
+    </div>
+    <div class="small-container">
+        <h1 class="title" id="mb">Mobiles</h1>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/mobiles-1.jpg">
+                <h4><q><strong>Apple iPhone 13 (128GB ROM, 4GB RAM, MLPG3HN/A, Starlight White)</strong></q></h4>
+                <p>Rs-550</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>5.6k|ratings
+                    only 6 left Hurry up!<br>
+                </div>
+                 <strong>Feature</strong>:
+                    15.4 cm (6.1"), Super Retina XDR
+                    4GB RAM | 128GB ROM | iOS 15
+                    Hexa-Core A15 
+                    Bionic Chip Processor
+                     R: 12MP + 12MP | F: 12MP
+                     Proximity Sensor |
+                      Facial Unlock<br>            
+                
+            </div>
+            <div class="col-4">
+                <img src="images/mobiles-2.jpg">
+               <h4><q><strong>POCO M4 Pro 5G (Power Black, 64 GB)  (4 GB RAM)</strong></q></h4>
+                <p><strong>Rs-</strong>700</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>5.7k|ratings
+                    1200 Available Big offer 8% discount<br>
+                </div>
+          
+                <strong>Feature</strong>:
+                     4 GB RAM | 64 GB ROM |
+                      Expandable Upto 1 TB
+                     16.76 cm (6.6 inch) 
+                     Full HD+ Display
+                     50MP + 8MP | 
+                     16MP Front Camera
+                     5000 mAh Lithium-ion 
+                     Polymer Battery
+                     Mediatek Dimensity 
+                     810 Processor
+            </div>
+            <div class="col-4">
+                <img src="images/mobiles-3.jpg">
+                 <h4><q><strong>OnePlus 9 128 GB, 8 GB RAM, Arctic Sky, Mobile Phone</strong></q></h4>
+                <p>Rs-650</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>6.7k|ratings
+                    only 9 left Hurry up!
+                </div>
+                <!-- <strong>Description</strong>: -->
+                <strong>Feature</strong>:
+                Hasselblad Camera for Mobile
+                120 Hz Fluid Display
+                Vibrant Color Effect,
+                 Ultra-High Video Resolution
+                  Dual Stereo Speakers
+            </div>
+            <div class="col-4">
+                <img src="images/mobiles-4.jpg">
+                <h4><q><strong>Google Pixel 6 Pro 5G (Cloudy White, 12GB RAM, 128GB Storage)</strong></q></h4>
+                <p>Rs-450</p>
+            
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>5.6k|ratings
+                    only 8 left 
+                    9% discount
+                </div>
+               <!--   <strong>Description</strong>:-->
+                <strong>Feature</strong>:
+                Introducing Pixel 6 Pro
+                the completely redesigned,
+                fully loaded 5G phone.
+                With a powerful camera system, 
+                next-gen security, and the 
+                custom-built Tensor processor,
+                it’s the smartest and fastest Pixel yet.
+         </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/mobiles-5.jpg">
+                <h4><q><strong>one plus 7T</strong></q></h4>
+                <p>Rs-550</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>4.7k|ratings
+                </div>
+                
+                <strong>Feature</strong>:
+                6 GB RAM | 128 GB ROM
+				16.74 cm (6.59 inch) Display
+				64MP Rear Camera
+				5000 mAh Battery
+            </div>
+            <div class="col-4">
+                <img src="images/mobiles-6.jpg">
+                <h4><q><strong>iPhone 8S</strong></q></h4>
+                <p>Rs-700</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>5.6k|ratings
+                </div>
+               
+                <strong>Feature</strong>:
+                1 TB ROM
+					15.49 cm (6.1 inch) Super Retina XDR Display
+					12MP + 12MP + 12MP | 12MP Front Camera
+					A15 Bionic Chip Processor
+            </div>
+            <div class="col-4">
+                <img src="images/mobiles-7.jpg">
+                <h4><q><strong>Huawei P50 pro</strong></q></h4>
+                <p>Rs-150</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>5.6k|ratings
+                </div>
+               
+                <strong>Feature</strong>:
+                4 GB RAM | 128 GB ROM
+				16.74 cm (6.59 inch) Full HD+ Display
+				16MP + 8MP + 2MP | 16MP Front Camera
+				4000 mAh Battery
+				HiSilicon Kirin 710F AI Chipset with Dual-NPU Processor
+            </div>
+            <div class="col-4">
+                <img src="images/mobiles-8.jpg">
+                <h4><q><strong>Samsung galaxy 8</strong></q></h4>
+                <p>Rs-1450</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>4.5k|ratings
+                </div>
+                
+                <strong>Feature</strong>:
+                12 GB RAM | 256 GB ROM
+					17.27 cm (6.8 inch) Display
+					108MP Rear Camera
+					5000 mAh Battery
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/mobiles-9.jpg">
+                <h4><q><strong>iPhone 11</strong></q></h4>
+                <p>Rs-850</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>5.9k|ratings
+                </div>
+               
+                <strong>Feature</strong>:
+                128 GB ROM
+				15.49 cm (6.1 inch) Liquid Retina HD Display
+				12MP + 12MP | 12MP Front Camera
+				A13 Bionic Chip Processor
+            </div>
+            <div class="col-4">
+                <img src="images/mobiles-10.jpg">
+                <h4><q><strong>iPhone 12</strong></q></h4>
+                <p>Rs-700</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>9.8k|ratings
+                </div>
+                
+                <strong>Feature</strong>:
+                128 GB ROM
+				15.49 cm (6.1 inch) Super Retina XDR Display
+				12MP + 12MP | 12MP Front Camera
+				A14 Bionic Chip with Next Generation Neural Engine Processor
+				Ceramic Shield
+				Industry-leading IP68 Water Resistance
+            </div>
+            <div class="col-4">
+                <img src="images/mobiles-11.jpg">
+                <h4><q><strong>iPhone 13 Pro</strong></q></h4>
+                <p>Rs-650</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>4.9k|ratings
+                </div>
+                
+                <strong>Feature</strong>:
+                512 GB ROM
+				17.02 cm (6.7 inch) Super Retina XDR Display
+				12MP + 12MP + 12MP | 12MP Front Camera
+				A15 Bionic Chip Processor
+            </div>
+            <div class="col-4">
+                <img src="images/mobiles-12.jpg">
+                <h4><q><strong>mi 10s</strong></q></h4>
+                <p>Rs-650</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>5.0k|ratings
+                </div>
+               
+                <strong>Feature</strong>:
+                6 GB RAM | 128 GB ROM | Expandable Upto 1 TB
+				16.94 cm (6.67 inch) Full HD+ AMOLED Display
+				108MP Rear Camera | 16MP Front Camera
+				5160 mAh Li-Polymer Battery
+				Mediatek Dimensity 920 Processor
+            </div>
+        </div>
+    
+    </div>
+    <div class="small-container">
+        <h1 class="title" id="wt">Watches</h1>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/watche-1.jpg">
+               <h4><q><strong>JW-316 Leather Strap Flower Watch Beautiful Watch Classic Watch For Girls Stylish Watch for Women Dial Analog Watch - For Girls</strong></q></h4>
+                <p>Rs-550</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>6.5k|ratings
+                    120 left Hurry up!
+                </div>
+
+            </div>
+            <div class="col-4">
+                <img src="images/watche-2.jpg">
+                <h4><q><strong>Titan 
+                        NN1584SL03 Analog Watch - For Men</strong></q></h4>
+                <p>Rs-700</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>5.5k|ratings
+                    6% discount mega Offer
+                </div>
+                
+            </div>
+            <div class="col-4">
+                <img src="images/watche-3.jpg">
+                <h4><q><strong>TIMEWEAR 
+                192WDTG TIMEWEAR Slim Series Two Hands 
+                Brown Leather Strap Analog Watch - For Men</strong></q></h4>
+                <p>Rs-650</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>5.5k|ratings
+                    only 2 left Hurry up!
+                </div>
+              
+            </div>
+            <div class="col-4">
+                <img src="images/watche-4.jpg">
+                <h4><q><strong>CITIZEN 
+                  BJ2120-07E Analog Watch - For Men</strong></q></h4>
+                <p>Rs-450</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>3.5k|ratings
+                    100 Available with 10% discount
+                </div>
+               
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/watche-5.jpg">
+                <h4><q><strong>NESTER 
+                  N-R101 Rose Gold Magnet Belt Professional 
+                  Designer Women Analog Watch - For Women</strong></q></h4>
+                <p>Rs-550</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>10k|ratings
+                </div>
+               
+            </div>
+            <div class="col-4">
+                <img src="images/watche-6.jpg">
+                <h4><q><strong>WROGN 
+                 WRG00034B Analog Watch - For Men</strong></q></h4>
+                <p>Rs-700</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>5.9k|ratings
+                </div>
+             
+            </div>
+            <div class="col-4">
+                <img src="images/watche-7.jpg">
+                <h4><q><strong>ROLEX-9221 Analog Watch - For Men
+                </strong></q></h4>
+                <p>Rs-150</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>3.5k|ratings
+                </div>
+               
+            </div>
+            <div class="col-4">
+                <img src="images/watche-8.jpg">
+                <h4><q><strong>SONATA 
+                 NN77085PL02W Volt+ Analog Watch - For Men</strong></q></h4>
+                <p>Rs-1450</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>5.5k|ratings
+                </div>
+               
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="small-container">
+        <h1 class="title" id="sh">Shoes</h1>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/shoes-1.jpg">
+               <h4><q><strong>CLARKS 
+                Casuals For Men  (Brown)
+               </strong></q></h4>
+               Sizes: 7|8|9
+                <p>Rs-550</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>5.4k|ratings
+                    only 7 left Hurry up!
+                </div>
+                
+            </div>
+            <div class="col-4">
+                <img src="images/shoes-2.jpg">
+                <h4><q><strong>NIKE 
+                 Reposto Wo Running Shoes For Women  (Pink)</strong></q></h4>
+                Sizes: 7|8|9
+                <p>Rs-700</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>3.5k|ratings
+                    Available Only 400!
+                </div>
+             
+            </div>
+            <div class="col-4">
+                <img src="images/shoes-3.jpg">
+                <h4><q><strong>ASIAN 
+               Rider-01 White Running Shoes for Men I Sport Shoes for Boys with Beads
+                Technology Sole for Extra Jump I 
+                Memory Foam Insole Running Shoes For Men  (White)</strong></q></h4>
+                Sizes: 7|8|9
+                <p>Rs-650</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>5.5k|ratings
+                    Only 20 left Hurry Up!
+                </div>
+              
+            </div>
+            <div class="col-4">
+                <img src="images/shoes-4.jpg">
+               <h4><q><strong>NIKE 
+                 Revolution 6 Next Nature Road Running
+                 Shoes For Men  (Black)</strong></q></h4>
+               Sizes: 7|8|9
+                <p>Rs-450</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>5.5k|ratings
+                    Available 25 Hurry up!
+                </div>
+               
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/shoes-5.jpg">
+                <h4><q><strong>NIKE 
+                  Air Max Excee Running Shoes For Men  (Green)</strong></q></h4>
+                Sizes: 7|8|9
+                <p>Rs-550</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>4.5k|ratings
+                </div>
+              
+            </div>
+            <div class="col-4">
+                <img src="images/shoes-6.jpg">
+               <h4><q><strong>Noztile 
+                Sneakers For Men  </strong></q></h4>
+               Sizes: 7|8|9
+                <p><strong>Rs-</strong>700</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>4.5k|ratings
+                 
+                </div>
+            </div>
+            <div class="col-4">
+                <img src="images/shoes-7.jpg">
+                <div class="rating">
+               <h4><q><strong>Kraasa 
+                 BeBop Boots For Men  (Brown)</strong></q></h4>
+               Sizes: 7|8|9
+                <p>Rs-150</p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>5.3k|ratings
+                </div>
+            </div>
+            <div class="col-4">
+                <img src="images/shoes-8.jpg">
+                <h4><q><strong>NIKE 
+                 Court Vision Low Sneakers For Men  (Brown)</strong></q></h4>
+                Sizes: 7|8|9
+                <p>Rs-1450</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>5.5k|ratings
+                </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/shoes-9.jpg">
+                <h4><q><strong>seeandwear brown casuals</strong></q></h4>
+                Sizes: 7|8|9
+                <p>Rs-850</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>5.6k|ratings
+                </div>
+                
+              
+            </div>
+            <div class="col-4">
+                <img src="images/shoes-10.jpg">
+                <h4><q><strong>Addidas Shoes</strong></q></h4>
+                 Sizes: 7|8|9
+                <p>Rs-700</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>5.4k|ratings
+                </div>
+               
+            </div>
+            <div class="col-4">
+                <img src="images/shoes-11.jpg">
+                <h4><q><strong>Nike Air casuals</strong></q></h4>
+                 Sizes: 7|8|9
+                <p>Rs-650</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>6.7k|ratings
+                </div>
+             
+            </div>
+            <div class="col-4">
+                <img src="images/shoes-12.jpg">
+                <h4><q><strong>Nike White Boots</strong></q></h4>
+                 Sizes: 7|8|9
+                <p>Rs-650</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>5.5k|ratings
+                </div>
+               
+            </div>
+        </div>
+    
+    </div>
+    <div class="small-container">
+        <h1 class="title" id="cl">Clothes</h1>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/clothes-1.jpg">
+                <h4><q><strong>Puma jumbo Combo</strong></q></h4>
+                Sizes: S|M|L
+                <p>Rs-550</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>5.7k|ratings
+                </div>
+                
+            </div>
+            <div class="col-4">
+                <img src="images/clothes-2.jpg">
+               <h4><q><strong>Addidas Brown Jacket for Unisex</strong></q></h4>
+                 Sizes: S|M|L
+                <p>Rs-700</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>5.0|ratings
+                </div>
+               
+            </div>
+            <div class="col-4">
+                <img src="images/clothes-3.jpg">
+               <h4><q><strong>Nike while T-shirt slim fit</strong></q></h4>
+                 Sizes: S|M|L
+                <p>Rs-650</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>4.6k|ratings
+                </div>
+               
+            </div>
+            <div class="col-4">
+                <img src="images/clothes-4.jpg">
+                <h4><q><strong>Allen solly dot-Shirt</strong></q></h4>
+                  Sizes: S|M|L
+                <p>Rs-450</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>4.4k|ratings
+                </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/clothes-5.jpg">
+                <h4><q><strong>Sparks original</strong></q></h4>
+                  Sizes: S|M|L
+                <p>Rs-550</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>3.4k|ratings
+                </div>
+               
+            </div>
+            <div class="col-4">
+                <img src="images/clothes-6.jpg">
+               <h4><q><strong>HRX White T-Shirt</strong></q></h4>
+                 Sizes: S|M|L
+                <p>Rs-700</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>1.2k|ratings
+                </div>
+                
+            </div>
+            <div class="col-4">
+                <img src="images/clothes-7.jpg">
+                <h4><q><strong>HRX Trails T-shirt for women</strong></q></h4>
+                  Sizes: S|M|L
+                <p>Rs-150</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>338|ratings
+                </div>
+               
+            </div>
+            <div class="col-4">
+                <img src="images/clothes-8.jpg">
+                <h4><q><strong>Levis casual shirt</strong></q></h4>
+                  Sizes: S|M|L
+                <p>Rs-1450</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>4.3k|ratings
+                </div>
+               
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/clothes-9.jpg">
+               <h4><q><strong>Roadster Jacket</strong></q></h4>
+                 Sizes: S|M|L
+                <p>Rs-850</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>4.7k|ratings
+                </div>
+                
+            </div>
+            <div class="col-4">
+                <img src="images/clothes-10.jpg">
+                <h4><q><strong>Addidas shirt for women</strong></q></h4>
+                  Sizes: S|M|L
+                <p>Rs-700</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>4.5k|ratings
+                </div>
+                
+            </div>
+            <div class="col-4">
+                <img src="images/clothes-11.jpg">
+                <h4><q><strong>van Huesen formal shirt</strong></q></h4>
+                  Sizes: S|M|L
+                <p>Rs-650</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>4.5k|ratings
+                </div>
+                
+            </div>
+            <div class="col-4">
+                <img src="images/clothes-12.jpg">
+                <h4><q><strong>Euro's Everydays T-shirt</strong></q></h4>
+                  Sizes: S|M|L
+                <p>Rs-650</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>4.4k|ratings
+                </div>
+               
+            </div>
+        </div>
+    
+    </div>
+    <div class="small-container">
+        <h1 class="title" id="ed">Electronic Devices</h1>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/ed-1.jpg">
+                <h4><q><strong>KUBRA KB-1014 USB, 45 min runtime, Adjustable 20 
+                Length Setting, Ultra Sleek Beard Trimmer for
+                 Men Runtime: 45 min Trimmer for Men  (Black)</strong></q></h4>
+                <p>Rs-550</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>3.3k|ratings
+                </div>
+                
+                <strong>Feature</strong>:
+                Blade Material: Stainless Steel
+				Trimming Range: 0.5 - 10 mm
+				45 min battery run time
+				20 length settings
+				Gender: Men
+                For Beard & Moustache
+            </div>
+            <div class="col-4">
+                <img src="images/ed-2.jpg">
+                <h4><q><strong>SXYU Kemei Cordless Electric Rechargeable Trimmer With Adjustable Limit Combo Runtime: 90 min Trimmer for Men & Women  (Multicolor)</strong></q></h4>
+                <p>Rs-700</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>3.9k|ratings
+                </div>
+                
+                <strong>Feature</strong>:
+                        Blade Material: Stainless Steel
+						Trimming Range: 0.5 - 6 mm
+						90 min battery run time
+						3 length settings
+						Gender: Men & Women
+						For Beard & Moustache, Body Grooming, Hair Clipping, Nose, Ear & Eyebrow
+            </div>
+            <div class="col-4">
+                <img src="images/ed-3.jpg">
+                <h4><q><strong>QUANTUM QHM630 Portable Laptop/Desktop USB Powered Multimedia Wooden Speaker with AUX Input (Multicolor) 6 W Laptop/Desktop Speaker  (MALTI, 2.0 Channel)</strong></q></h4>
+                <p>Rs-650</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>4.0|ratings
+                </div>
+               
+                <strong>Feature</strong>:
+                
+					Power Output(RMS): 6 W
+					Power Source: USB
+					Connectivity : Wired
+            </div>
+            <div class="col-4">
+                <img src="images/ed-4.jpg">
+                <h4><q><strong>boAt Stone 1200F with upto 9 Hours Battery, IPX7 and RGB LEDs 14 W Bluetooth Speaker  (Grey Hound, Stereo Channel)</strong></q></h4>
+                <p>Rs-450</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>4.7|ratings
+                </div>
+                
+                <strong>Feature</strong>:
+                Power Output(RMS): 14 W
+				Bluetooth Version: 5
+				Wireless range: 10 m
+				Wireless music streaming via Bluetooth
+				Battery Time: Upto 9 hours(w/o LED) & 7hours(with LED)
+				IPX7: Water Resistant
+				TWS Feature: Connect 2 Stone 1200F at once
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/ed-5.jpg">
+                <h4><q><strong>ZEBRONICS ZEB-WARRIOR 10 W Laptop/Desktop Speaker  (Black, Black, 2.0 Channel)</strong></q></h4>
+                <p>Rs-550</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>1234|ratings
+                </div>
+              
+                <strong>Feature</strong>:
+                Power Output(RMS): 10 W
+				Power Source: USB Powered/5V=1A Adapter
+				Connectivity : Wired
+            </div>
+            <div class="col-4">
+                <img src="images/ed-6.jpg">
+                <h4><q><strong>Boult Audio Bass Bud Q2 with40mm Drivers,Punchy Deep Bass,Lightweight,Protein leather Padded Wired Headset  (Black, On the Ear)</strong></q></h4>
+                <p>Rs-700</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>3.6|ratings
+                </div>
+                
+                <strong>Feature</strong>:
+                With Mic:Yes
+					Connector type: 3.5
+					40mm Drivers | Punchy Deep Bass
+					Premium finish with Protein Leather Padding,Tangle Free Wire
+					Inline Controls with Voice Assistant
+					Light-weight | Flexible & Adjustable Headband
+            </div>
+            <div class="col-4">
+                <img src="images/ed-7.jpg">
+                <h4><q><strong>MOTOROLA Escape 210 with Google Assistant Bluetooth Headset  (Black, On the Ear)</strong></q></h4>
+                <p>Rs-150</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>345|ratings
+                </div>
+                
+                <strong>Feature</strong>:
+                With Mic:Yes
+				10 hours of playtime
+            </div>
+            <div class="col-4">
+                <img src="images/ed-8.jpg">
+                <h4><q><strong>SONY ZX110-AP Wired Headset  (Black, On the Ear)</strong></q></h4>
+                <p>Rs-1450</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>123|ratings
+                </div>
+                
+                <strong>Feature</strong>:
+                With Mic:Yes
+         		Connector type: 3.5 mm
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/ed-9.jpg">
+                <h4><q><strong>Ubon Bluetooth Earphone with Mic, Up to 30H Playtime CL-392 Dangal Series Wireless Bluetooth Headset  (Black, In the Ear)</strong></q></h4>
+                <p>Rs-850</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>3.4|ratings
+                </div>
+                
+                <strong>Feature</strong>:
+                With Mic:Yes
+				Bluetooth version: 5.0
+				Wireless range: 10 m
+				Battery life: 30 hr
+            </div>
+            <div class="col-4">
+                <img src="images/ed-10.jpg">
+                <h4><q><strong>MAXOBULL EP-141 Wired Headset  (Black, In the Ear)</strong></q></h4>
+                <p>Rs-700</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>4.0|ratings
+                </div>
+                
+                <strong>Feature</strong>:
+                With Mic:Yes
+				Flatwire: Stays tangle free even in your pocket
+            </div>
+            <div class="col-4">
+                <img src="images/ed-11.jpg">
+                <h4><q><strong>OPPO Enco Buds With 24 hours Battery Life Bluetooth Headset  (Blue, True Wireless)</strong></q></h4>
+                <p>Rs-650</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o">4.6</i>|ratings
+                </div>
+                
+                <strong>Feature</strong>:
+                With Mic:Yes
+				Bluetooth version: 5.2
+            </div>
+            <div class="col-4">
+                <img src="images/ed-12.jpg">
+                <h4><q><strong>DIZO Buds P with Fast Charge, 40HPlaytime & 13mm Driver (by realme TechLife) Bluetooth Headset  (Dynamo Black, True Wireless)</strong></q></h4>
+                <p>Rs-650</p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>4.5|ratings
+                </div>
+               
+                <strong>Feature</strong>:
+                With Mic:Yes
+				Bluetooth version: 5.3
+				Charging time: 1 Hour (Earbuds), 2 Hours (Charging Case)
+				40H playtime
+				13mm Dynamic Driver
+				10min charge for 4 hours music
+				Bluetooth 5.3, instant connection
+				Low latency, Game Mode
+				Noise Cancellation for calls
+                
+            </div>
+        </div>
+    
+    </div>
+</div>
+
+<div class="offer">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/exclusive.png" class="offer-img">
+            </div>
+            <div class="col-2">
+                <p>Exclusive Available on ZKART</p>
+                <h1>Smart Brand 4</h1>
+                <small>
+                    SWADESI STUFF Analogue Men's Watch (Black Dial Brown Colored Strap)
+                </small>
+                <a href="" class="btn">Buy Now &#8594</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="brands">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-5">
+                <img src="images/logo-godrej.png">
+            </div>
+            <div class="col-5">
+                <img src="images/logo-coca-cola.png">
+            </div>
+            <div class="col-5">
+                <img src="images/logo-oppo.png">
+            </div>
+            <div class="col-5">
+                <img src="images/logo-philips.png">
+            </div>
+            <div class="col-5">
+                <img src="images/logo-paypal.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Download Our App</h3>
+                <p>Download App for Android and ios mobile phones</p>
+                <div class="app-logo">
+                    
+                    <img src="images/play-store.png">
+                    <img src="images/app-store.png" >
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <img src="images/logo1.png" >
+                <p>Download App for Android and ios mobile phones</p>
+            </div>
+            <div class="footer-col-3">
+               <h3>UselFul Links</h3>
+               <ul>
+                <li>Coupons</li>
+                <li>Blog Posts</li>
+                <li>Return Policy</li>
+                <li>Join Afflicate</li>
+               </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow Us</h3>
+                <ul>
+                 <li>Twitter</li>
+                 <li>Instagram</li>
+                 <li>Facebook</li>
+                 <li>Youtube</li>
+                </ul>
+             </div>
+             
+
+        </div>
+        <hr>
+        <p class="copyrights">Copyright 2022 - ZKART</p>
+    </div>
+</div>
+<script>
+    var MenuItems=document.getElementById("MenuItems");
+    MenuItems.style.maxHeight="0px";
+
+    function menutoggle(){
+    if(MenuItems.style.maxHeight="0px"){
+        MenuItems.style.maxHeight="200px"
+    }
+    else{
+        MenuItems.style.maxHeight="0px";
+    }
+    }
+    
+    const myTimeout = setTimeout(myGreeting, 1000);
+
+    function myGreeting() {
+      document.getElementById("demo").innerHTML = alert("Login Successfully!!");
+    }
+
+    function myStopFunction() {
+      clearTimeout(myTimeout);
+    }
+
+    function myStopFunction() {
+      clearTimeout(myTimeout);
+    }
+</script>
+
+
+</body>
+</html>
