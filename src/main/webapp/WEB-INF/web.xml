@@ -190,5 +190,25 @@
     <servlet-name>Purchase</servlet-name>
     <url-pattern>/Purchase</url-pattern>
   </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>Orders</display-name>
+    <servlet-name>Orders</servlet-name>
+    <servlet-class>com.login.Orders</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Orders</servlet-name>
+    <url-pattern>/Orders</url-pattern>
+  </servlet-mapping>
+<servlet>
+    <description></description>
+    <display-name>Review</display-name>
+    <servlet-name>Review</servlet-name>
+    <servlet-class>com.login.Review</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Review</servlet-name>
+    <url-pattern>/Review</url-pattern>
+  </servlet-mapping>
   
 </web-app>

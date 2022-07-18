@@ -29,9 +29,10 @@ public class MyCart extends HttpServlet {
 			System.out.println("hello");
             conn = DriverManager.getConnection(url, "postgres", "postgres");
             Statement st = conn.createStatement();
-            String query = "select * from products,cart where products.product_id=cart.product_id";
+            String query = "select * from products,cart where products.product_id=cart.p_id and cart.c_id=(select c_id from curr_cart where email='"+Cookiecls.email+"')";
             System.out.println(query);
             ResultSet rs = st.executeQuery(query);
+           
             //boolean usrExists = false;
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
@@ -66,8 +67,8 @@ public class MyCart extends HttpServlet {
             		+ "    </div>");
   while(rs.next()) {
 	  String x="";
-            	if(rs.getString("username").equals(Cookiecls.name)) {
-            		if(rs.getString("username").equals("")) {
+            	if(rs.getString("email").equals(Cookiecls.email)) {
+            		if(rs.getString("email").equals("")) {
             			response.sendRedirect("log.jsp");
             		}
             		else {
@@ -80,6 +81,7 @@ public class MyCart extends HttpServlet {
                       	String d="Discount:  ";
                       	String f="Feature:   ";
                       	String ds="Description:   ";
+                      	String dp="DiscountedPrice: ";
                       	String imurl=rs.getString("img_url");
                       			x+="<div style='background-color:pink;border-radius:10px;width:600px;margin-left:250px; text-align:center';>";
                     
@@ -91,11 +93,15 @@ public class MyCart extends HttpServlet {
                              		 y+="<strong>"+r  +"</strong>" + rs.getString("rating")+"<br>";
                              		 y+="<strong>"+a  +"</strong>" + rs.getString("availability")+"<br>";
                              		 y+="<strong>"+d  +"</strong>" + rs.getString("discounts")+"off"+"<br>";
+                             		y+="<strong>"+dp  +"</strong>" + rs.getString("discounted_price")+"<br>";
                              		 y+="<strong>"+f +"</strong>" + rs.getString("feature")+"<br>";
                              		 y+="<strong>"+ds  +"</strong>" + rs.getString("decription");
-                             		 y+="<form method='post' action='Buy'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='display:inline-block;margin-left:650px;font-size:20px;border-radius:10px;background-color:yellow;border-color:white;color:white;'value='Buy'/></form>";
+                             		 
+                             		 
+                             		 
                          		x+=y;
                          		x+="</div>";
+                         		//x+="<form method='post' action='Buy'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='display:inline-block;margin-left:650px;font-size:20px;border-radius:10px;background-color:yellow;border-color:white;color:white;'value='Buy'/></form>";
                          		 
                          		x+="<br/>";
                          		
@@ -103,8 +109,17 @@ public class MyCart extends HttpServlet {
                          		out.println(x);
                          		
                       }
+  String query2 = "select c_id from curr_cart where email='"+Cookiecls.email+"'";
+  System.out.println(query);
+  ResultSet rs2 = st.executeQuery(query2);
+  int c_id=0;
+  while(rs2.next()) {
+  	c_id=rs2.getInt("c_id");
+  }
+  out.println("<form method='post' action='purchase.jsp'><input name='details' hidden type='text' value='\"+c_id+\"' ><input type='submit' style='display:inline-block;margin-left:650px;font-size:28px;padding-left:20px;padding-right:20px;border-radius:10px;background-color:#FFD700;border-color:white;color:black;'value='Buy'/></form>\'");
                       
-           
+                     
+                      
             
      
         } catch (SQLException e) {

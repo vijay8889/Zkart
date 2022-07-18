@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="java.io.*, java.util.*, java.sql.*" %>
+<%@ page import="jakarta.servlet.http.*, jakarta.servlet.*" %>
+<%
+String url="jdbc:postgresql://localhost:5432/postgres";
+String uname="postgres";
+String pw="postgres";
+Class.forName("org.postgresql.Driver");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,26 +75,49 @@ div.containerss {
         </nav>
         
 <%
-String c_id=request.getParameter("details");
+String p_id=request.getParameter("details");
+String product_name="";
+try{ 
+	
+	Connection conn=DriverManager.getConnection(url,uname,pw);
+	
+	String query="select * from products where product_id="+p_id+"";
+	Statement st=conn.createStatement();
+	ResultSet rs=st.executeQuery(query);
+	System.out.println("Query: "+query);
+	while(rs.next()){
+	
+		 product_name=rs.getString("name");
+         System.out.println(product_name);
+	
+}} catch (Exception e) {
+e.printStackTrace();
+}
+finally
+{
+    //System.out.println("finally block executed");
+}
+%>         
 
-%>
 <div class="containerss">
 <h1>PURCHASE DETAILS</h1>
-<form action="Purchase" method="post">
+ 
 
-
-    <label for="name">Card Holder Name</label>
-    <input type="text" id="name" name="name" >
-    
-     <label for="accountno">Account Number</label>
-    <input type="number" id="accountno" name="accountno" >
-    
-     <label for="cvv">CVV</label>
-    <input type="number" id="cvv" name="cvv" >
+<form action="Review" method="post">
+     <h3><%=product_name%></h3>
+     <br>
+    <label for="review">Review/Comment</label>
+    <input type="text" id="review" name="review" >
+       
+       
+     <label for="rating">Rating</label>
+    <input type="number" id="rating" step="0.01" name="rating" >
     
      
     
-    <input type="submit" value="Purchase">
+     
+    <input type="hidden"   name="p_id" value=<%=p_id %> >
+    <input type="submit" value="submit">
   </form>
 </div>
 

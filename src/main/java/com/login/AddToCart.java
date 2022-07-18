@@ -32,14 +32,18 @@ public class AddToCart extends HttpServlet {
             conn = DriverManager.getConnection(url, "postgres", "postgres");
             Statement st = conn.createStatement();  
             String q="select * from products where product_id="+productid+"";
-            String q1="select * from curr_cart where email=(select id from users where email='"+email+"')";
+            String q1="select * from curr_cart where email='"+email+"'";
             ResultSet rs2=st.executeQuery(q1);
             if(rs2.next()==false) {
             	
             	String q2="insert into curr_cart(email) values('"+email+"')";
+            	int rs3=st.executeUpdate(q2);
+            	
             }
-            rs2=st.executeQuery(q1);
-            int c_id=rs2.getInt("c_id");
+             rs2=st.executeQuery(q1);
+            int c_id=0;
+            while(rs2.next()) {
+            c_id=rs2.getInt("c_id");}
             ResultSet rs=st.executeQuery(q);
             
             while(rs.next()) {
@@ -49,7 +53,7 @@ public class AddToCart extends HttpServlet {
             PreparedStatement pStatement = conn.prepareStatement(query);
             pStatement.setInt(1, c_id);
             pStatement.setString(2, email);
-            pStatement.setInt(2, productid);
+            pStatement.setInt(3, productid);
             
             pStatement.execute();
             pStatement.clearParameters();

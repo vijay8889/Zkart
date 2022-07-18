@@ -47,6 +47,12 @@ response.setHeader("Expires", "0");
                            </button>    
                        </form>
                 </li>
+                <li><form action="Orders" method="POST">
+                         <button class="btn">Orders   
+                   <!--  <img src="images/cart.png" width="30px" height="30px">-->
+                           </button>    
+                       </form>
+                </li>
                 
                 
             
@@ -119,6 +125,7 @@ try{
 	String query="select * from products";
 	Statement st=conn.createStatement();
 	ResultSet rs=st.executeQuery(query);
+	
 	System.out.println("Query: "+query);
 	while(rs.next()){
 	
@@ -133,21 +140,36 @@ try{
             	String d="Discount:  ";
             	String f="Feature:   ";
             	String ds="Description:   ";
+            	String dp="DiscountedPrice: ";
+            	
             	String imurl=rs.getString("img_url");
             			x+="<div style='background-color:pink;border-radius:10px;width:900px;margin-left:250px; text-align:center';>";    
             			 //y+="<strong>"+p  +"</strong>" + rs.getString("product_id")+"<br>";
-                   		 y+="<img src="+imurl+" style='width:40%; height:50%'>"+"<br>";
+                   		 y+="<img src="+imurl+" style='width:40%; height:50%;'>"+"<br>";
                    		// y+="Catregory:"+ rs.getString("catogories")+"<br>";
                    		 y+="<strong>"+n  +"</strong>" + rs.getString("name")+"<br>";
                		     y+="<strong>"+pr  +"</strong>" + rs.getString("price")+"<br>";		 
                    		 y+="<strong>"+r  +"</strong>" + rs.getString("rating")+"<br>";
                    		 y+="<strong>"+a  +"</strong>" + rs.getString("availability")+"<br>";
                    		 y+="<strong>"+d  +"</strong>" + rs.getString("discounts")+"off"+"<br>";
+                   		 y+="<strong>"+dp  +"</strong>" + rs.getString("discounted_price")+"<br>";
+                   		 y+="<strong>Customer Reviews</strong><br>";
+                   		String query2="select * from review,users where review.p_id="+rs.getString("product_id")+" and review.email=users.email";
+                   		Statement st2=conn.createStatement();
+                   		ResultSet rs3=st2.executeQuery(query2);
+                   		int count=0;
+                   		while(rs3.next()){
+                   			if (count>=5) break;
+                   			y+=rs3.getString("review")+"<br>";
+                   			y+="<strong>-By </strong>"+rs3.getString("username")+"<br>";
+                  
+                   		}
+                
                    		 //y+="<strong>"+f +"</strong>" + rs.getString("feature")+"<br>";
                    		 //y+="<strong>"+ds  +"</strong>" + rs.getString("decription");
                		
                		x+=y;
-               		x+="<form method='post' action='AddToCart'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='margin-left:650px;font-size:20px;border-radius:30px;background-color:yellow;border-color:white;color:black;'value='Add To Cart'/></form><form method='post' action='AddToWishlist'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='display:inline-block;margin-left:650px;font-size:20px;border-radius:10px;background-color:e0007a;border-color:white;color:white;'value='WishList'/></form>";
+               		x+="<form method='post' action='AddToCart'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='margin-left:650px;font-size:20px;border-radius:30px;padding-left:10px;padding-right:10px;background-color:yellow;border-color:white;color:black;'value='Add To Cart'/></form><form method='post' action='AddToWishlist'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='display:inline-block;margin-left:650px;font-size:20px;border-radius:10px;padding-left:10px;padding-right:10px;background-color:e0007a;border-color:white;color:white;'value='WishList'/></form>";
                		x+="</div>";
                		 
                		x+="<br/>";
@@ -164,7 +186,7 @@ e.printStackTrace();
 }
 finally
 {
-    System.out.println("finally block executed");
+    //System.out.println("finally block executed");
 }
 %>         
    

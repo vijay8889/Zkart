@@ -24,7 +24,8 @@ public class Add extends HttpServlet {
         String availability = request.getParameter("availability");
         String price = request.getParameter("price");
         String discount = request.getParameter("discount");
-       
+        float discounted_price=Float.parseFloat(price)-(Float.parseFloat(price)*(Float.parseFloat(discount)/100));
+        
         try {
             String url="jdbc:postgresql://localhost:5432/postgres";
 			try {
@@ -49,7 +50,7 @@ public class Add extends HttpServlet {
                 }
             }
             
-            String query = "insert into products(img_url,catogories,name,feature,decription,rating,availability,price,discounts) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "insert into products(img_url,catogories,name,feature,decription,rating,availability,price,discounts,discounted_price) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             System.out.println("hello");
             PreparedStatement pStatement = conn.prepareStatement(query);
             pStatement.setString(1, imgurl);
@@ -61,6 +62,7 @@ public class Add extends HttpServlet {
             pStatement.setInt(7, Integer.parseInt(availability));
             pStatement.setInt(8, Integer.parseInt(price));
             pStatement.setInt(9, Integer.parseInt(discount));
+            pStatement.setInt(10, (int)discounted_price);
             pStatement.execute();
             pStatement.clearParameters();
             request.setAttribute("valid", "Product Added ");

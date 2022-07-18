@@ -73,7 +73,7 @@ public class Buy extends HttpServlet {
                                 	String f="Feature:   ";
                                 	String ds="Description:   ";
                                 	String imurl=rs.getString("img_url");
-                                			x+="<div style='background-color:pink;border-radius:10px;width:600px;margin-left:250px; text-align:center';>";
+                                			x+="<div style='background-color:pink;border-radius:10px;width:800px;margin-left:250px; text-align:center';>";
                               
                                 			 //y+="<strong>"+p  +"</strong>" + rs.getString("product_id")+"<br>";
                                        		 y+="<img src="+imurl+" style='width:40%; height:50%'>"+"<br>";
@@ -85,7 +85,7 @@ public class Buy extends HttpServlet {
                                        		 y+="<strong>"+d  +"</strong>" + rs.getString("discounts")+"off"+"<br>";
                                        		 y+="<strong>"+f +"</strong>" + rs.getString("feature")+"<br>";
                                        		 y+="<strong>"+ds  +"</strong>" + rs.getString("decription");
-                                       		 y+="<form method='post' action='Conf'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='display:inline-block;margin-left:650px;font-size:20px;border-radius:10px;background-color:yellow;border-color:white;color:white;'value='Purchase'/></form>";
+                                       		 y+="<form method='post' action='Conf'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='display:inline-block;margin-left:650px;font-size:25px;border-radius:10px;background-color:yellow;border-color:white;color:black;'value='Purchase'/></form>";
                                       		
                                        		// y+="<button ><a href=\"Purchase.jsp\">Confirm</a></button>";
                                    		x+=y;

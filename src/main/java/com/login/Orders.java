@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class Wishlist extends HttpServlet {
+public class Orders extends HttpServlet {
     Connection conn;
 
     @Override
@@ -29,9 +29,10 @@ public class Wishlist extends HttpServlet {
 			System.out.println("hello");
             conn = DriverManager.getConnection(url, "postgres", "postgres");
             Statement st = conn.createStatement();
-            String query = "select * from products,wishlist where products.product_id=wishlist.p_id";
+            String query = "select * from products,purchase,cart where purchase.c_id=cart.c_id and cart.p_id=products.product_id";
             System.out.println(query);
             ResultSet rs = st.executeQuery(query);
+           
             //boolean usrExists = false;
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
@@ -67,7 +68,10 @@ public class Wishlist extends HttpServlet {
   while(rs.next()) {
 	  String x="";
             	if(rs.getString("email").equals(Cookiecls.email)) {
-            		
+            		if(rs.getString("email").equals("")) {
+            			response.sendRedirect("log.jsp");
+            		}
+            		else {
             		    String y="";
                       	String p="product_id:  ";
                       	String n="Name:  ";
@@ -77,8 +81,9 @@ public class Wishlist extends HttpServlet {
                       	String d="Discount:  ";
                       	String f="Feature:   ";
                       	String ds="Description:   ";
+                      	//String us=rs.getString("name");
                       	String imurl=rs.getString("img_url");
-                      			x+="<div style='background-color:pink;border-radius:10px;width:400px;margin-left:500px; text-align:center';>";
+                      			x+="<div style='background-color:pink;border-radius:10px;width:600px;margin-left:250px; text-align:center';>";
                     
                       			 //y+="<strong>"+p  +"</strong>" + rs.getString("product_id")+"<br>";
                              		 y+="<img src="+imurl+" style='width:40%; height:50%'>"+"<br>";
@@ -87,21 +92,26 @@ public class Wishlist extends HttpServlet {
                          		     y+="<strong>"+pr  +"</strong>" + rs.getString("discounted_price")+"<br>";		 
                              		 y+="<strong>"+r  +"</strong>" + rs.getString("rating")+"<br>";
                              		 y+="<strong>"+a  +"</strong>" + rs.getString("availability")+"<br>";
-                             		 y+="<strong>"+d  +"</strong>" + rs.getString("discounts")+"off"+"<br>";
-                             		 y+="<strong>"+f +"</strong>" + rs.getString("feature")+"<br>";
-                             		 y+="<strong>"+ds  +"</strong>" + rs.getString("decription");
-                         		
+                             		 //y+="<strong>"+d  +"</strong>" + rs.getString("discounts")+"off";
+                             		// y+="<strong>"+f +"</strong>" + rs.getString("feature")+"<br>";
+                             		 //y+="<strong>"+ds  +"</strong>" + rs.getString("decription");
+                             		 
                          		x+=y;
+                         		x+="<form method='post' action='review.jsp'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='margin-left:650px;font-size:20px;border-radius:30px;padding-left:10px;padding-right:10px;background-color:yellow;border-color:white;color:black;'value='Review'/></form>";
+                           		
                          		x+="</div>";
+                         		//x+="<form method='post' action='Buy'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='display:inline-block;margin-left:650px;font-size:20px;border-radius:10px;background-color:yellow;border-color:white;color:white;'value='Buy'/></form>";
                          		 
                          		x+="<br/>";
-                         		//out.println("<form method='post' action='Ad'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='display:inline-block;margin-left:650px;font-size:20px;padding-left:10px;padding-right:10px;border-radius:10px;background-color:yellow;border-color:white;color:white;'value='Buy'/></form>");
-            		}
+                         		
+            		}}
                          		out.println(x);
                          		
                       }
+  
+                  
+                     
                       
-           
             
      
         } catch (SQLException e) {

@@ -54,8 +54,9 @@ public class Profile extends HttpServlet {
             		+ "        </div>\r\n"
             		+ "        <nav>\r\n"
             		+ "            <ul id=\"MenuItems\">\r\n"
-            		+ "                <li><a href=\"home.jsp\"></a></li>\r\n"
-            		
+            		//+ "                <li><a class=\"btn\" href=\"home.jsp\"></a></li>\r\n"
+            		+ "                <li><a href=\"home.jsp\">Back</a></li>\r\n"
+            		+ "                \r\n"
             		+ "              <li><form action=\"Logout\" method=\"POST\">\r\n"
             		+ "                         <button class=\"btn\">Logout   \r\n"
             		+ "                   <!--  <img src=\"images/cart.png\" width=\"30px\" height=\"30px\">-->\r\n"
@@ -68,7 +69,7 @@ public class Profile extends HttpServlet {
             		+ "    </div>");
   while(rs.next()) {
 	  String x="";
-            	if(rs.getString("username").equals(Cookiecls.name)) {
+            	if(rs.getString("email").equals(Cookiecls.email)) {
             		if(rs.getString("username").equals("")) {
             			response.sendRedirect("log.jsp");
             		}
@@ -81,7 +82,7 @@ public class Profile extends HttpServlet {
             	          	String ad="Address:  ";
             	          	String p="Phone Number:  ";
             	        	
-            	        			x+="<div style='background-color:pink;border-radius:10px;width:400px;margin-left:500px; text-align:center';>";
+            	        			x+="<div style='background-color:pink;padding-top:20px;border-radius:10px;width:400px;margin-left:500px; text-align:center';>";
             	               		 y+="<ul>";
             	               		 y+="<li><strong>"+us  +"</strong>" + rs.getString("username")+"</li><br>";
             	           		     y+="<li><strong>"+email1  +"</strong>" + rs.getString("email")+"</li><br>";
