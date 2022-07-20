@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN PAGE</title>
+    <title>UPDATE PAGE</title>
     <link rel = "stylesheet"  href="style.css" media = "screen" />
     <style>
 body {
@@ -75,7 +75,7 @@ if(session.getAttribute("username")==null){
             <ul id="MenuItems">
                 <li><a href=" ">Home</a></li>
                 <li><a href="">Products</a></li>
-                <li><a href="update.jsp">NEXT</a></li>
+                <li><a href="Addproducts.jsp">Back</a></li>
                 <li><a href="Admin.jsp" class="btn">Logout</a></li>
                 
             </ul>
@@ -101,13 +101,9 @@ if(session.getAttribute("username")==null){
       										 out.println(valids + "<p style='color:red'><br>Add Another Product<br></p>"); 
      										 }  %>   
     
-    <div class="account-page">
-    <div class="container" >
-        <div class="row">
-            <div class="col-2">
-               <div class="container1"> 
-<h1>ADDING PRODUCTS</h1>
-<form action="Add" method="POST" >
+    <div class="container1">
+<h1>UPDATE PRODUCTS</h1>
+<form action="Update" method="POST" >
 
     <label for="imgurl">Imgage</label>
     <input type="text" id="imgurl" name="imgurl" >
@@ -131,31 +127,11 @@ if(session.getAttribute("username")==null){
   
 
   
-    <input type="submit" value="Add Product">
+    <input type="submit" value="Edit">
                    
   </form>
-            </div></div>
-            <div class="col-2">
-            <div class="container1">
-                
-<h1>Delete PRODUCTS</h1>
-<form action="DeleteProducts" method="POST" >
-
+</div>
     
-     <label for="name">Name</label>
-    <input type="text" id="name" name="name" >
-    <input type="submit" value="Delete Product">
-                   
-  </form>
-                </div></div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-            
 
 
 </body>

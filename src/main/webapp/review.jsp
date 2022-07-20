@@ -109,8 +109,9 @@ finally
     <label for="review">Review/Comment</label>
     <input type="text" id="review" name="review" >
        
+       <label>Rate Us Between 0 to 5</label>
        
-     <label for="rating">Rating</label>
+     <!-- <label for="rating">Rating</label> -->
     <input type="number" id="rating" step="0.01" name="rating" >
     
      

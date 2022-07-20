@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class Add extends HttpServlet {
+public class Update extends HttpServlet {
     Connection conn;
 
     @Override
@@ -37,20 +37,20 @@ public class Add extends HttpServlet {
             conn = DriverManager.getConnection(url, "postgres", "postgres");
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("select name from products");
-            boolean nameExists = false;
+         
             response.setContentType("text/html");
             PrintWriter out = response.getWriter();
-            while(rs.next()) {
-                if(name.equals(rs.getString("name"))) {
-                    nameExists = true;
-                    request.setAttribute("invalid", "Existing Product ");
-        			RequestDispatcher rd = request.getRequestDispatcher("Addproducts.jsp");
-        			rd.forward(request, response);
-                    break;
-                }
-            }
+//            while(rs.next()) {
+//                if(name.equals(rs.getString("name"))) {
+//                    
+//                    request.setAttribute("invalid", " Product Doesn't Exist!!!!!!!!!!!!!!");
+//        			RequestDispatcher rd = request.getRequestDispatcher("Addproducts.jsp");
+//        			rd.forward(request, response);
+//                    break;
+//                }
+//            }
             
-            String query = "insert into products(img_url,catogories,name,feature,decription,rating,availability,price,discounts) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String query ="update products set img_url=?, catogories=?, name=?, feature=?, description=?, rating=?, availability=?, price=?, discounts=?, discounted_price=? where name="+name+"" ;
             System.out.println("hello");
             PreparedStatement pStatement = conn.prepareStatement(query);
             pStatement.setString(1, imgurl);
@@ -62,10 +62,10 @@ public class Add extends HttpServlet {
             pStatement.setInt(7, Integer.parseInt(availability));
             pStatement.setInt(8, Integer.parseInt(price));
             pStatement.setInt(9, Integer.parseInt(discount));
-           
+            
             pStatement.execute();
             pStatement.clearParameters();
-            request.setAttribute("valid", "Product Added ");
+            request.setAttribute("valid", "Product Updated ");
 			RequestDispatcher rds = request.getRequestDispatcher("Addproducts.jsp");
 			rds.forward(request, response);
             
@@ -81,3 +81,4 @@ public class Add extends HttpServlet {
         }
     }   
 }
+

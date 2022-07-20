@@ -10,12 +10,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class Orders extends HttpServlet {
+public class View1 extends HttpServlet {
     Connection conn;
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
-  
+        String p_id=request.getParameter("details");
         
         
         try {
@@ -26,10 +26,10 @@ public class Orders extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println("hello");
+			System.out.println(p_id);
             conn = DriverManager.getConnection(url, "postgres", "postgres");
             Statement st = conn.createStatement();
-            String query = "select * from products,purchase,cart where purchase.c_id=cart.c_id and cart.p_id=products.product_id";
+            String query = "select * from products where product_id="+p_id+"";
             System.out.println(query);
             ResultSet rs = st.executeQuery(query);
            
@@ -60,18 +60,14 @@ public class Orders extends HttpServlet {
             		+ "        <nav>\r\n"
             		+ "            <ul id=\"MenuItems\">\r\n"
             		+ "                <li><a href=\" \">Home</a></li>\r\n"
-            		+ "                <li><a href=\"home.jsp\">Back</a></li>\r\n"
+            		+ "                <li><a href=\"first.jsp\">Back</a></li>\r\n"
             		+ "                \r\n"
             		+ "            </ul>\r\n"
             		+ "        </nav>\r\n"
             		+ "    </div>");
-  while(rs.next()) {
+  if(rs.next()) {
 	  String x="";
-            	if(rs.getString("email").equals(Cookiecls.email)) {
-            		if(rs.getString("email").equals("")) {
-            			response.sendRedirect("log.jsp");
-            		}
-            		else {
+            	
             		    String y="";
                       	String p="product_id:  ";
                       	String n="Name:  ";
@@ -81,52 +77,35 @@ public class Orders extends HttpServlet {
                       	String d="Discount:  ";
                       	String f="Feature:   ";
                       	String ds="Description:   ";
-                      	String product_discountedprice="DiscountedPrice: ";
-                      	
-                      	//String us=rs.getString("name");
+                      	String dp="DiscountedPrice: ";
                       	String imurl=rs.getString("img_url");
-                      			x+="<div style='background: rgb(238,174,202);background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);border-radius:10px;width:600px;margin-left:250px; text-align:center';>";
-                    
+                      	x+="<img src="+imurl+" style='width:60%; height:60%;margin-left:200px;'>"+"<br>";
+                      			x+="<div style='background: rgb(238,174,202);background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);border-radius:10px;width:750px;margin-left:200px;height:150px; text-align:center';>";
+                                 y+="<br>";
                       			 //y+="<strong>"+p  +"</strong>" + rs.getString("product_id")+"<br>";
-                             		 y+="<img src="+imurl+" style='width:40%; height:50%'>"+"<br>";
+                             		 
                              		// y+="Catregory:"+ rs.getString("catogories")+"<br>";
                              		 y+="<strong>"+n  +"</strong>" + rs.getString("name")+"<br>";
-                         		     y+="<strong>"+pr  +"</strong>" + rs.getString("price")+"<br>";	
-                         		    y+="<strong>"+d  +"</strong>" + rs.getString("discounts")+"off"+"<br>";
-                               		String price=rs.getString("price");
-                          			String discount=rs.getString("discounts"); 
-                             		 float discountedprice=Float.parseFloat(price)-(Float.parseFloat(price)*(Float.parseFloat(discount)/100));
-                           		     y+="<strong>"+product_discountedprice+"</strong>" +discountedprice +"<br>";
+//                         		     y+="<strong>"+pr  +"</strong>" + rs.getString("price")+"<br>";		 
+//                             		 y+="<strong>"+r  +"</strong>" + rs.getString("rating")+"<br>";
+//                             		 y+="<strong>"+a  +"</strong>" + rs.getString("availability")+"<br>";
+//                             		 y+="<strong>"+d  +"</strong>" + rs.getString("discounts")+"off"+"<br>";
+//                             		//y+="<strong>"+dp  +"</strong>" + rs.getString("discounted_price")+"<br>";
+                             		 y+="<strong>"+f +"</strong>" + rs.getString("feature")+"<br>";
+                             		 y+="<strong>"+ds  +"</strong>" + rs.getString("decription");
+                             		 y+="<br>";
                              		 
-                             		 y+="<strong>"+r  +"</strong>" + rs.getString("rating")+"<br>";
-                             		 y+="<strong>"+a  +"</strong>" + rs.getString("availability")+"<br>";
-                             		 y+="<strong>Customer Reviews</strong><br>";
-                                		String query2="select * from review,users where review.p_id="+rs.getString("product_id")+" and review.email=users.email";
-                                		Statement st2=conn.createStatement();
-                                		ResultSet rs3=st2.executeQuery(query2);
-                                		int count=0;
-                                		while(rs3.next()){
-                                			if (count>=5) break;
-                                			y+=rs3.getString("review")+"<br>";
-                                			y+="<strong>-By </strong>"+rs3.getString("username")+"<br>";
-                               
-                                		}
                              		 
                          		x+=y;
-                         		x+="<form method='post' action='review.jsp'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='margin-left:650px;font-size:20px;border-radius:30px;padding-left:10px;padding-right:10px;background-color:yellow;border-color:white;color:black;'value='Review'/></form>";
-                           		
                          		x+="</div>";
-                         		//x+="<form method='post' action='Buy'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='display:inline-block;margin-left:650px;font-size:20px;border-radius:10px;background-color:yellow;border-color:white;color:white;'value='Buy'/></form>";
-                         		 
+                         		
                          		x+="<br/>";
                          		
-            		}}
+            		
                          		out.println(x);
                          		
                       }
-  
-                  
-                     
+                
                       
             
      
@@ -142,3 +121,4 @@ public class Orders extends HttpServlet {
         }
     }   
 }
+

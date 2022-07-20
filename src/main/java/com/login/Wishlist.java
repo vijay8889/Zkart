@@ -77,21 +77,28 @@ public class Wishlist extends HttpServlet {
                       	String d="Discount:  ";
                       	String f="Feature:   ";
                       	String ds="Description:   ";
+                      	String dp="DiscountedPrice: ";
                       	String imurl=rs.getString("img_url");
-                      			x+="<div style='background-color:pink;border-radius:10px;width:400px;margin-left:500px; text-align:center';>";
+                      			x+="<div style='background: rgb(238,174,202);background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);border-radius:10px;width:850px;margin-left:250px; text-align:center';>";
                     
                       			 //y+="<strong>"+p  +"</strong>" + rs.getString("product_id")+"<br>";
                              		 y+="<img src="+imurl+" style='width:40%; height:50%'>"+"<br>";
                              		// y+="Catregory:"+ rs.getString("catogories")+"<br>";
                              		 y+="<strong>"+n  +"</strong>" + rs.getString("name")+"<br>";
-                         		     y+="<strong>"+pr  +"</strong>" + rs.getString("discounted_price")+"<br>";		 
+                         		     y+="<strong>"+pr  +"</strong>" + rs.getString("price")+"<br>";		 
                              		 y+="<strong>"+r  +"</strong>" + rs.getString("rating")+"<br>";
                              		 y+="<strong>"+a  +"</strong>" + rs.getString("availability")+"<br>";
                              		 y+="<strong>"+d  +"</strong>" + rs.getString("discounts")+"off"+"<br>";
+                             		String price=rs.getString("price");
+                          			String discount=rs.getString("discounts");
+                          			float discountedprice=Float.parseFloat(price)-(Float.parseFloat(price)*(Float.parseFloat(discount)/100));
+                           		    y+="<strong>"+dp  +"</strong>"+discountedprice+ "<br>";
+                               
                              		 y+="<strong>"+f +"</strong>" + rs.getString("feature")+"<br>";
                              		 y+="<strong>"+ds  +"</strong>" + rs.getString("decription");
                          		
                          		x+=y;
+                         		x+="<form method='post' action='AddToCart'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='margin-left:650px;font-size:20px;border-radius:30px;padding-left:10px;padding-right:10px;background-color:yellow;border-color:white;color:black;'value='Add To Cart'/>";
                          		x+="</div>";
                          		 
                          		x+="<br/>";

@@ -15,7 +15,7 @@ Class.forName("org.postgresql.Driver");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home-Page</title>
+    <title>Z-Kart</title>
     <link rel = "stylesheet"  href="style.css" media = "screen" />
 
 </head>
@@ -127,6 +127,7 @@ try{
 	ResultSet rs=st.executeQuery(query);
 	
 	System.out.println("Query: "+query);
+	int total=0;
 	while(rs.next()){
 	
   	
@@ -141,18 +142,24 @@ try{
             	String f="Feature:   ";
             	String ds="Description:   ";
             	String dp="DiscountedPrice: ";
+            	String of="/5";
             	
             	String imurl=rs.getString("img_url");
-            			x+="<div style='background-color:pink;border-radius:10px;width:900px;margin-left:250px; text-align:center';>";    
+            			x+="<div style='background: rgb(238,174,202);background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);border-radius:10px;width:900px;opacity:0.9;;margin-left:250px; text-align:center';>";    
             			 //y+="<strong>"+p  +"</strong>" + rs.getString("product_id")+"<br>";
-                   		 y+="<img src="+imurl+" style='width:40%; height:50%;'>"+"<br>";
+                   		 y+="<img src="+imurl+" style='width:40%; height:50%;'>";
+                   	    y+="<form method='post' action='View'><input name='details' hidden type='text' value='"+rs.getInt("product_id")+"' ><input type='submit' style='margin-left:50px;font-size:20px;border-radius:20px;background-color:grey;border-color:white;color:black;'value='view'/></form>";
                    		// y+="Catregory:"+ rs.getString("catogories")+"<br>";
                    		 y+="<strong>"+n  +"</strong>" + rs.getString("name")+"<br>";
-               		     y+="<strong>"+pr  +"</strong>" + rs.getString("price")+"<br>";		 
-                   		 y+="<strong>"+r  +"</strong>" + rs.getString("rating")+"<br>";
+              			String price=rs.getString("price");
+              			String discount=rs.getString("discounts");
+              			float discountedprice=Float.parseFloat(price)-(Float.parseFloat(price)*(Float.parseFloat(discount)/100));
+               		     y+="<strong>"+pr  +"</strong>" + price+"<br>";		 
+                   		 y+="<strong>"+r  +"</strong>" + rs.getString("rating")+of+"<br>";
                    		 y+="<strong>"+a  +"</strong>" + rs.getString("availability")+"<br>";
-                   		 y+="<strong>"+d  +"</strong>" + rs.getString("discounts")+"off"+"<br>";
-                   		 y+="<strong>"+dp  +"</strong>" + rs.getString("discounted_price")+"<br>";
+                   		 y+="<strong>"+d  +"</strong>" + discount+"off"+"<br>";
+                   		 y+="<strong>"+dp  +"</strong>" + discountedprice+"<br>";
+                   		
                    		 y+="<strong>Customer Reviews</strong><br>";
                    		String query2="select * from review,users where review.p_id="+rs.getString("product_id")+" and review.email=users.email";
                    		Statement st2=conn.createStatement();
@@ -165,8 +172,7 @@ try{
                   
                    		}
                 
-                   		 //y+="<strong>"+f +"</strong>" + rs.getString("feature")+"<br>";
-                   		 //y+="<strong>"+ds  +"</strong>" + rs.getString("decription");
+                   		 
                		
                		x+=y;
                		x+="<form method='post' action='AddToCart'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='margin-left:650px;font-size:20px;border-radius:30px;padding-left:10px;padding-right:10px;background-color:yellow;border-color:white;color:black;'value='Add To Cart'/></form><form method='post' action='AddToWishlist'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='display:inline-block;margin-left:650px;font-size:20px;border-radius:10px;padding-left:10px;padding-right:10px;background-color:e0007a;border-color:white;color:white;'value='WishList'/></form>";

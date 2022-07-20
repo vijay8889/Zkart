@@ -73,7 +73,8 @@ public class Purchase extends HttpServlet {
             	Statement st2 = conn.createStatement();
             	int p_id=rs5.getInt("product_id");
             	int quantity=rs5.getInt("availability");
-            	String query5="update products set availability="+Integer.toString(quantity-1)+"where product_id="+p_id+"";
+            	int currquantity=rs5.getInt("quantity");
+            	String query5="update products set availability="+Integer.toString(quantity-currquantity)+"where product_id="+p_id+"";
             	int rs6=st2.executeUpdate(query5);
             	System.out.print(p_id);
             }

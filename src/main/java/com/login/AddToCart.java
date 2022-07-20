@@ -44,16 +44,23 @@ public class AddToCart extends HttpServlet {
             int c_id=0;
             while(rs2.next()) {
             c_id=rs2.getInt("c_id");}
+            ResultSet rs4=st.executeQuery("select quantity from cart where p_id="+productid+"");
+            int quantity=0;
+            while (rs4.next()) {
+            	quantity=rs4.getInt("quantity");
+            }
             ResultSet rs=st.executeQuery(q);
+            
             
             while(rs.next()) {
             	if(rs.getInt("availability")!=0) {
-            String query = "insert into cart(c_id, email, p_id) values(?, ?, ?)";
+            String query = "insert into cart(c_id, email, p_id,quantity) values(?, ?, ?, ?)";
             
             PreparedStatement pStatement = conn.prepareStatement(query);
             pStatement.setInt(1, c_id);
             pStatement.setString(2, email);
             pStatement.setInt(3, productid);
+            pStatement.setInt(4, quantity+1);
             
             pStatement.execute();
             pStatement.clearParameters();

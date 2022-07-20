@@ -51,7 +51,7 @@ public class Review extends HttpServlet {
             	ratings=rs2.getInt("rating");
             	
             }
-            int newrating=(ratings*count+Integer.parseInt(rating))/(count+1);
+            float newrating=(ratings*count+Float.parseFloat(rating))/(count+1);
             System.out.println(newrating);
             String query3="update products set rating="+newrating+"where product_id="+p_id+"";
             int rs3=st.executeUpdate(query3);

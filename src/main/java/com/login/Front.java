@@ -64,6 +64,10 @@ public class Front extends HttpServlet {
             		+ "            </ul>\r\n"
             		+ "        </nav>\r\n"
             		+ "    </div>");
+            if(!rs.next()) {
+            	out.print("<h1>no products available</h1>");
+            	return;
+            }
             while(rs.next()) {
             	
             	String x="";
@@ -77,7 +81,7 @@ public class Front extends HttpServlet {
             	String f="Feature:   ";
             	String ds="Description:   ";
             	String imurl=rs.getString("img_url");
-            			x+="<div style='background-color:pink;border-radius:10px;width:400px;margin-left:500px; text-align:center';>";
+            			x+="<div style='background-color:pink;border-radius:10px;width:900px;margin-left:250px; text-align:center';>";
           
             			 //y+="<strong>"+p  +"</strong>" + rs.getString("product_id")+"<br>";
                    		 y+="<img src="+imurl+" style='width:40%; height:50%'>"+"<br>";
@@ -96,7 +100,7 @@ public class Front extends HttpServlet {
                		x+="<br/>";
 
                		out.println(x);
-               		out.println("<form method='post' action='AddToCart'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='display:inline-block;margin-left:650px;font-size:20px;border-radius:10px;background-color:yellow;border-color:white;color:white;'value='Add To Cart'/></form>");
+               		out.println("<form method='post' action='AddToCart'><input name='details' hidden type='text' value='"+rs.getString("product_id")+"' ><input type='submit' style='display:inline-block;margin-left:650px;font-size:20px;border-radius:10px;background-color:yellow;border-color:white;color:black;'value='Add To Cart'/></form>");
             }
             
      
